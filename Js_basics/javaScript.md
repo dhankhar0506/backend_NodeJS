@@ -96,56 +96,56 @@
 
 - [if_elseIf_else]
   
-  let marks = 75;
-  if (marks >= 90) {
-    console.log("Grade A");
-  } else if (marks >= 60) {
-    console.log("Grade B");
-  } else {
-    console.log("Grade C");
-  }
-  
+- let marks = 75;
+- if (marks >= 90) {
+  console.log("Grade A");
+- } else if (marks >= 60) {
+  console.log("Grade B");
+- } else {
+  console.log("Grade C");
+- }
+
 - [switch_case]
   
-  let day = 2;
-  switch (day) {
-    case 1:
-      console.log("Monday");
-      break;
+- let day = 2;
+- switch (day) {
+  - case 1:
+    console.log("Monday");
+    break;
 
-    case 2:
-      console.log("Tuesday");
-      break;
+  - case 2:
+    console.log("Tuesday");
+    break;
 
-    default:
-      console.log("Invalid Day");
-    }
+  - default:
+    console.log("Invalid Day");
+  }
 
 -[Loops(Iteration)]
-    <!-- for -->
-    for (let i = 1; i <= 5; i++) {
-    console.log(i);
-    }
+  <!-- for -->
+- for (let i = 1; i <= 5; i++) {
+- console.log(i);
+  }
 
-    <!-- =while -->
-    let i = 1;
-    while (i <= 5) {
-      console.log(i);
-      i++;
-    }
+  <!-- =while -->
+- let i = 1;
+- while (i <= 5) {
+  console.log(i);
+  i++;
+}
 
-  <!--do while -->
-    let i = 1;
-    do {
-      console.log(i);
-      i++;
-    } while (i <= 5);
+<!--do while -->
+- let i = 1;
+- do {
+  console.log(i);
+  i++;
+} while (i <= 5);
 
 - [ternary_operator]
-  condition ? value_if_true : value_if_false
-  let age = 20
-  let result = age >= 18 ? "Adult" : "Minor";
-  console.log(result);
+- condition ? value_if_true : value_if_false
+- let age = 20
+- let result = age >= 18 ? "Adult" : "Minor";
+- console.log(result);
 
 - [break]: Stops the loop completely.
 - [continue]: Skips current iteration.
