@@ -132,10 +132,12 @@
         console.log(i);
         i++;
       -}while(i <= 5);
-      <!-- ternary operator -->
-      -let age = 20;
-      -let result = age >= 18 ? "Adult" : "Minor";
-      -console.log(result);
+
+- [ternary_operator]
+- let result = condition ? value1 : value2;
+  - let age = 20;
+  - let result = age >= 18 ? "Adult" : "Minor";
+  - console.log(result);
 
 - [break]: Stops the loop completely.
 - [continue]: Skips current iteration.
@@ -346,7 +348,7 @@ Temporal Dead Zone is the time between variable hoisting and its initialization 
   - let apples = "2";
     let oranges = "3";
     // both values converted to numbers before the binary plus
-    alert( +apples + +oranges ); // 5
+    alert( +apples + +oranges ); // 5 // (+) before variable convert string into number
 
 - Subtraction -,
 - Multiplication *,
@@ -396,3 +398,60 @@ Temporal Dead Zone is the time between variable hoisting and its initialization 
   - let a = (1 + 2, 3 + 4);
   - alert( a ); // 7 (the result of 3 + 4) 
 
+- Comparison
+  - alert( '2' > 1 ); // true, string '2' becomes a number 2
+  - alert( '01' == 1 ); // true, string '01' becomes a number 1 
+
+  - alert( true == 1 ); // true
+  - alert( false == 0 ); // true
+
+  - alert( null === undefined ) // false (typeof null-> object and typeof undefined-> undefined)
+  - alert( null == undefined ); // true
+
+  - alert( null > 0 );  // (1) false
+  - alert( null == 0 ); // (2) false
+  - alert( null >= 0 ); // (3) true
+
+  - alert( undefined > 0 ); // false (1)
+  - alert( undefined < 0 ); // false (2)
+  - alert( undefined == 0 ); // false (3)
+
+- Logical operators
+  - || (OR)
+    - alert( true || true );   // true
+    - alert( false || true );  // true
+    - alert( true || false );  // true
+    - alert( false || false ); // false
+  - && (AND)
+    - result = a && b;
+    - alert( true && true );   // true
+    - alert( false && true );  // false
+    - alert( true && false );  // false
+    - alert( false && false ); // false
+  - ! (NOT)
+    - Returns the inverse value.
+    - alert( !true ); // false
+    - alert( !0 ); // true
+
+## Nullish coalescing operator '??'
+
+- The Nullish Coalescing Operator returns the right value only when the left value is null or undefined.
+  - If value1 is null or undefined → return value2
+  - Otherwise → return value1
+  - let name = null;
+  - let result = name ?? "Guest";
+  - console.log(result) // Guest
+
+- let count = 0;
+  let result = count || 10;
+  console.log(result); // 10 beacuse when we used this it takes 0 as falsy value and return 10
+      - false
+      - 0
+      - ""
+      - null
+      - undefined
+      - NaN
+
+- let count = 0;
+- let result = count ?? 10;
+- console.log(result);// 0 because it check null and undefined only in nullish operator 
