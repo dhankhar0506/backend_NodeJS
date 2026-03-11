@@ -1,99 +1,121 @@
-# [JavaScript]
+# JavaScript
 
-## what is JS?
+## What is JavaScript?
 
-- JavaScript is a high-level, interpreted programming language mainly used to make web pages interactive.
+JavaScript is a high-level, interpreted programming language primarily used to make web pages interactive.
+
+### Key Features:
 - Handle user events (click, hover, submit)
 - Update HTML & CSS dynamically
 - Create backend servers using Node.js
-- Js is Interpreted Language
-  - Compilation → Translate the entire book first, then read it.
-  - Interpretation → Translate sentence by sentence while reading.
-- Dynamically Typed
-- JavaScript is a dynamically typed language, meaning we don't need to declare variable types explicitly. The type is determined automatically at runtime and a variable can hold different types of values during execution.
-- Asynchronous Programming(built in Feature) : JavaScript can handle non-blocking operations using
-    Callbacks
-    Promises
-    Async / Await
-    Event Loop.
 
-## how to take input from user in JS?
+### Language Characteristics:
+- **Interpreted Language**: Translates code sentence by sentence during execution (unlike compilation which translates everything first)
+- **Dynamically Typed**: Variables don't require explicit type declaration; types are determined at runtime
+- **Asynchronous Programming**: Built-in support for non-blocking operations via:
+  - Callbacks
+  - Promises
+  - Async/Await
+  - Event Loop
 
-- let age = prompt('How old are you?', 100);
-- alert(`You are ${age} years old!`); // You are 100 years old!
+---
 
-- We covered 3 browser-specific functions to interact with visitors:
-  - Alert()
-  - prompt()
-  - confrim
-    - let isBoss = confirm("Are you the boss?");
-      alert( isBoss );
+## User Input
 
-## Data Types in JS?
+### Browser Functions for User Interaction:
 
-- Primitive Data Types:
-  - Primitive data types store single simple values and are immutable (cannot be changed directly).
-  - String, Number, Boolean.
-  - Undefined: A variable declared but no value assigned.
-  - Null:Represents an intentional empty value.
-  - Symbol, BigInt
-  
-- Non-Primitive Data Types
-  - These store complex data and references in memory.
-  - Object Array Function.
+```javascript
+// prompt() - Get user input
+let age = prompt('How old are you?', 100);
+alert(`You are ${age} years old!`);
 
-- typeof undefined // "undefined"
-- typeof 0 // "number"
-- typeof 10n // "bigint"-> n represent the bigint
-- typeof true // "boolean"
-- typeof "foo" // "string"
-- typeof Symbol("id") // "symbol"
-- typeof Math // "object"  (1)
-- typeof null // "object"  (2)
-- typeof alert // "function"  (3)
-  
-## == vs === in JavaScript?
+// confirm() - Yes/No dialog
+let isBoss = confirm("Are you the boss?");
+alert(isBoss);
 
-== Loose Equality Compares values only.
-=== Strict Equality Compares value and datatype.
+// alert() - Display message
+alert("Hello!");
+```
 
-## Type Conversion in JavaScript with +, -, *, %
+---
 
-- (+) If one value is a string, JavaScript converts the other value into a string.
-- (-,*,%) operators always converts values into numbers.
+## Data Types
 
-- [String_Conversion]
-  - let value = true;
-  - alert(typeof value); // boolean
-  - value = String(value); // now value is a string "true"
-  - alert(typeof value); // string
-  
-- [Numeric_Conversion]
-      - let str = "123";
-      - alert(typeof str); // string
-      - let num = Number(str); // becomes a number 123
-      - alert(typeof num); // number
+### Primitive Data Types
+Store single simple values and are immutable:
+- **String**: Text data
+- **Number**: Integers and decimals
+- **Boolean**: `true` or `false`
+- **Undefined**: Variable declared but no value assigned
+- **Null**: Intentional empty value
+- **Symbol**: Unique identifier
+- **BigInt**: Large integers (use `n` suffix)
 
-      - alert( Number("   123   ") ); // 123
-      - alert( Number("123z") );      // NaN (error reading a number at "z")
-      - alert( Number(true) );        // 1
-      - alert( Number(false) );       // 0
+### Non-Primitive Data Types
+Store complex data and references:
+- **Object**: Key-value pairs
+- **Array**: Ordered collection
+- **Function**: Reusable code block
 
-      - let age = Number("an arbitrary string instead of a number");
-      - alert(age); // NaN, conversion failed
+### Type Checking:
+```javascript
+typeof undefined        // "undefined"
+typeof 0               // "number"
+typeof 10n             // "bigint"
+typeof true            // "boolean"
+typeof "foo"           // "string"
+typeof Symbol("id")    // "symbol"
+typeof Math            // "object"
+typeof null            // "object" (quirk)
+typeof alert           // "function"
+```
 
-- [Boolean_Conversion]
-  - alert( Boolean(1) ); // true
-  - alert( Boolean(0) ); // false
+---
 
-  - alert( Boolean("hello") ); // true
-  - alert( Boolean("") ); // false
+## Equality Operators
 
-  - alert( Boolean("0") ); // true
-  - alert( Boolean(" ") ); // spaces, also true (any non-empty string is true)
+- **`==`** (Loose): Compares values only (type coercion)
+- **`===`** (Strict): Compares value and data type
 
-## control Flow in JS?
-## Control Flow in JS?
+---
+
+## Type Conversion
+
+### With Operators:
+- **`+`**: If one operand is a string, JavaScript converts the other to a string
+- **`-`, `*`, `%`**: Always convert values to numbers
+
+### Explicit Conversion:
+
+**String Conversion:**
+```javascript
+let value = true;
+value = String(value);  // "true"
+```
+
+**Numeric Conversion:**
+```javascript
+let str = "123";
+let num = Number(str);  // 123
+
+Number("   123   ");    // 123
+Number("123z");         // NaN
+Number(true);           // 1
+Number(false);          // 0
+```
+
+**Boolean Conversion:**
+```javascript
+Boolean(1);             // true
+Boolean(0);             // false
+Boolean("hello");       // true
+Boolean("");            // false
+Boolean("0");           // true (non-empty string)
+```
+
+---
+
+## Control Flow
 
 ### if / else if / else
 
@@ -124,7 +146,7 @@ switch (day) {
 }
 ```
 
-### Loops (Iteration)
+### Loops
 
 **for loop:**
 ```javascript
@@ -142,7 +164,7 @@ while (i <= 5) {
 }
 ```
 
-**do while loop:**
+**do...while loop:**
 ```javascript
 let i = 1;
 do {
@@ -158,324 +180,384 @@ condition ? value_if_true : value_if_false
 
 let age = 20;
 let result = age >= 18 ? "Adult" : "Minor";
-console.log(result);
 ```
 
 ### break and continue
 
-- **break**: Stops the loop completely.
-- **continue**: Skips current iteration.
+- **`break`**: Stops the loop completely
+- **`continue`**: Skips current iteration
 
-## Explain Varibale and What the difference between var vs let vs const
+---
 
-- A variable is a “named storage” for data. We can use varibales to Store data.
-  There are two limitations on variable names in JavaScript:
-    The name must contain only letters, digits, or the symbols $ and _.
-    The first character must not be a digit.
+## Variables: var vs let vs const
 
-- [Var]
-- works inside a function, not block.
-- Re-declaration Allowed and  Re-assignment Allowed
-- Hoisted
+A variable is a named storage for data.
 
-- [let]
-- Block Scoped
-- Re-declaration NOT allowed
-  - let a = 10
-  - let a = 20.
-- Re-assignment Allowed
-  - let a = 10;
-  - a = 20; // allowed.
+### Variable Naming Rules:
+- Must contain only letters, digits, `$`, and `_`
+- First character cannot be a digit
 
-- [Const]=  Block Scoped, Re-declaration and  Re-assignment  NOT allowed.
+### Comparison:
 
-## . What is Hoisting?
+| Feature | var | let | const |
+|---------|-----|-----|-------|
+| Scope | Function | Block | Block |
+| Re-declaration | ✅ Allowed | ❌ Not allowed | ❌ Not allowed |
+| Re-assignment | ✅ Allowed | ✅ Allowed | ❌ Not allowed |
+| Hoisted | ✅ Yes | ✅ Yes (TDZ) | ✅ Yes (TDZ) |
 
-- Hoisting means JavaScript moves variable and function declarations to the top of their scope before execution.
+---
 
-## What is Temporal Dead Zone (TDZ)?
+## Hoisting
 
-Temporal Dead Zone is the time between variable hoisting and its initialization where the variable cannot be used.
-    console.log(a);
-    let a = 10
-    Variable hoisted
-    TDZ starts
-    console.log(a) → ERROR
-    a = 10 (TDZ ends)
+Hoisting means JavaScript moves variable and function declarations to the top of their scope before execution.
 
-## Function = reusable block of code that runs when call?
+---
 
-- Function = reusable block of code that runs when called
-- Function Declaration -> function add(a, b) {
-                            return a + b;
-                            }
-                            console.log(add(5, 3));
-                        - Hoisted
-                        - Can be called before declaration
-- Function Expression : Not hoisted like declaration. Runs only after definition.
-- Arrow Function (ES6): Short syntax function.
-                      - const add = (a,b) => a + b;
-- IFFI : Function that runs immediately after creation.
-- Anonymous Function: Function without a name example :  settimeout and setTimeinterval
+## Temporal Dead Zone (TDZ)
+
+The time between variable hoisting and initialization where the variable cannot be accessed:
+
+```javascript
+console.log(a);  // ReferenceError
+let a = 10;      // TDZ ends here
+```
+
+---
+
+## Functions
+
+Functions are reusable blocks of code that execute when called.
+
+### Function Declaration
+```javascript
+function add(a, b) {
+  return a + b;
+}
+console.log(add(5, 3));  // 8
+```
+- Hoisted (can be called before declaration)
+
+### Function Expression
+```javascript
+const add = function(a, b) {
+  return a + b;
+};
+```
+- Not hoisted (callable only after definition)
+
+### Arrow Function (ES6)
+```javascript
+const add = (a, b) => a + b;
+```
+
+### IIFE (Immediately Invoked Function Expression)
+```javascript
+(function() {
+  console.log("Runs immediately");
+})();
+```
+
+### Anonymous Functions
+Functions without a name, often used with `setTimeout` and `setInterval`
+
+---
 
 ## Higher Order Functions (HOF)
 
-- A Higher Order Function is a function that:
-    Takes another function as argument
-    OR
-    Returns a function
+A function that:
+- Takes another function as an argument, OR
+- Returns a function
+
+---
 
 ## Callback Functions
 
-- A callback function is a function passed as an argument to another function and executed later.
+A function passed as an argument to another function and executed later:
+
+```javascript
+function greet(name, callback) {
+  console.log("Hello " + name);
+  callback();
+}
+
+greet("John", () => console.log("Callback executed!"));
+```
+
+---
 
 ## Pure vs Impure Functions
 
-- A pure function:Always returns the same output for the same input and Does not change external variables.
-- Impure FunctionAnn:Modifies external variables and Output can change.
+**Pure Function:**
+- Always returns the same output for the same input
+- Does not modify external variables
 
-## Closures (Very Important)
+**Impure Function:**
+- Modifies external variables
+- Output can vary for the same input
 
-- A closure happens when a function remembers variables from its outer scope even after the outer function has finished executing.
+---
 
-## setTimeout and setInterval?
+## Closures
 
-- setTimeout and setInterval are JavaScript timer functions used to run code after some time.
-- setTimeout runs a function only once after a delay.
-- setInterval runs a function repeatedly after a fixed time interval.
-- To stop interval  we used : clearTimeout() or  clearInterval()
+A closure occurs when a function remembers variables from its outer scope even after the outer function has finished executing:
 
-## What is an Object?
+```javascript
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    console.log(count);
+  };
+}
 
-- An object is a collection of key–value pairs.
-  - const user = {
-    name: "Gourav",
-    age: 22,
-    city: "Punjab"
-    };
-    console.log(user.name)
-- const user = new Object();
-    user.name = "Gourav";
-    user.age = 22;
-- Important Object Methods
-  - Object.keys()
-  - Object.values()
-  - Object.entries()
-  - Object.assign() => Copies objects.
-    - const obj1 = {a:1};
-    - const obj2 = {b:2};
-    - const result = Object.assign({}, obj1, obj2);
-    - console.log(result);
-  - Object.freeze() : Prevents modification.
-  - Object.seal(): Allows update but not add/delete.
-  
-- Object Destructuring (ES6): 
-                            - const user = {
-                                name:"Gourav",
-                                age:22
-                            };
-                            const {name, age} = user
-- Spread Operator with Objects:
-                            const obj1 = {a:1}
-                            const obj2 = {b:2}
-                            const result = {...obj1, ...obj2}
-                            console.log(result)
-- Looping in object
-     const user = {
-      name:"Gourav",
-      age:22
-    };
+const counter = outer();
+counter();  // 1
+counter();  // 2
+```
 
-    for(let key in user){
-    console.log(key, user[key]);
-    }
+---
 
-- Shallow vs Deep Copy
-- shallow copy:
-  - const obj2 = {...obj1};
-  - Nested objects still share reference.
-- Deep Copy
-  - const obj2 = JSON.parse(JSON.stringify(obj1));
+## setTimeout and setInterval
 
-- Constructor function:  
-    function Person(name, age){
-        this.name = name;
-        this.age = age;
-    }
-    const p1 = new Person("Gourav",22)
+- **`setTimeout`**: Executes a function once after a delay
+- **`setInterval`**: Executes a function repeatedly at fixed intervals
+- **`clearTimeout()` / `clearInterval()`**: Stops the timer
 
-- Using Class (ES6):
-    class Person{
-        constructor(name, age){
-        this.name = name;
-        this.age = age;
-        }
-    }
-  - user.name // access
-  - user["name"] // access
-  - user.age = 25; // update
-  - delete user.city; // delete
+---
 
-## what is array in JS?
+## Objects
 
-- creating => const fruits = ["Apple", "Banana", "Mango"];
-- Access Array Elements : Arrays use indexing (starts from 0).
-                        - console.log(fruits[0]);
-- Modify Array:  fruits[3] = "Orange"
-- Important Array Properties
-  - length => arr.length
-  - push() : Adds element at the end
-           : arr.push(4);
-  - pop()  : Removes element from end
-           :  arr.pop() , arr.pop(2)
-  - unshift():Adds element at beginning  
-  - shift(): Removes element from beginning
-- Looping :  
-  - for(let i=0;i<arr.length;i++){
-    console.log(arr[i]);
-    }
+An object is a collection of key-value pairs.
 
-  - arr.forEach((num)=>{
-      console.log(num);
-    });
-- Higher Order Methods
-  - map() : Creates a new array
-  - filter() : Filters elements based on condition.
-  - reduce() : Reduces array to single value.
-  - find() : Returns first matching element
-  - some() : Returns true if at least one matches
-  - every() : Returns true if all match.
-- Array Searching Methods
-  - arr.includes(2); // true
-  - arr.indexOf(3) // 2
-- Array Manipulation Methods
-  - arr.slice(1,3); // Returns copy of array
-  - arr.splice(1,2) // Add/remove elements.
-- spread operator : const result = [...arr1,...arr2];
-- Array Destructuring
-    const arr = [10,20,30];
-    const [a,b] = arr;
-    console.log(a);
--Join: 
-    const arr = ["JS","React"];
-    arr.join("-") // JS-React
--Split:
-    const str = "JS,React,Node";
-    str.split(","); // ["JS","React","Node"]
+### Creating Objects:
 
-## Operators in JS?
+```javascript
+// Object literal
+const user = {
+  name: "Gourav",
+  age: 22,
+  city: "Punjab"
+};
+console.log(user.name);
 
-- Addition +,
-  - alert(2 + 2 + '1' ); // "41" and not "221"
-  - alert('1' + 2 + 2); // "122" and not "14"
+// Constructor
+const user = new Object();
+user.name = "Gourav";
+user.age = 22;
+```
 
-  - let apples = "2";
-    let oranges = "3";
-    // both values converted to numbers before the binary plus
-    alert( +apples + +oranges ); // 5 // (+) before variable convert string into number
+### Object Methods:
 
-- Subtraction -,
-- Multiplication *,
-- Division /,
-- Remainder %,
+```javascript
+Object.keys(obj)        // Returns array of keys
+Object.values(obj)      // Returns array of values
+Object.entries(obj)     // Returns [key, value] pairs
 
-- Exponentiation **.
-  - alert( 2 ** 2 ) // square  
-  - alert( 4 ** (1/2) ) // square root
+Object.assign({}, obj1, obj2)  // Merges objects
+Object.freeze(obj)      // Prevents modifications
+Object.seal(obj)        // Allows updates, not add/delete
+```
 
-- Assignment operator
-  - let a, b, c;
-  - a = b = c = 2 + 2;
-  - alert( a ); // 4
-  - alert( b ); // 4
-  - alert( c ); // 4
+### Destructuring:
 
-  - let n = 2;
-  - n += 5; // now n = 7 (same as n = n + 5)
-  - n *= 2; // now n = 14 (same as n = n * 2)
-  - alert( n ); // 14
+```javascript
+const { name, age } = user;
+```
 
-  - let counter = 0;
-  - alert( counter++ ); // 0  
+### Spread Operator:
 
-  - let counter = 0;
-  - alert( ++counter ); // 1
+```javascript
+const obj1 = { a: 1 };
+const obj2 = { b: 2 };
+const result = { ...obj1, ...obj2 };  // { a: 1, b: 2 }
+```
 
-  - let counter = 1;
-  - let a = counter++; // (*) changed ++counter to counter++
-  - alert(a); // 1
+### Looping:
 
-  - let counter = 1;
-  - let a = ++counter; // (*)
-  - alert(a); // 2
+```javascript
+const user = { name: "Gourav", age: 22 };
+for (let key in user) {
+  console.log(key, user[key]);
+}
+```
 
-- Bitwise operators
-  - AND ( & )
-  - OR ( | )
-  - XOR ( ^ )
-  - NOT ( ~ )
-  - LEFT SHIFT ( << )
-  - RIGHT SHIFT ( >> )
-  - ZERO-FILL RIGHT SHIFT ( >>> )
+### Copying Objects:
 
-- Comma
-  - let a = (1 + 2, 3 + 4);
-  - alert( a ); // 7 (the result of 3 + 4) 
+**Shallow Copy:** `const obj2 = {...obj1};`  
+Nested objects still share reference.
 
-- Comparison
-  - alert( '2' > 1 ); // true, string '2' becomes a number 2
-  - alert( '01' == 1 ); // true, string '01' becomes a number 1 
+**Deep Copy:** `const obj2 = JSON.parse(JSON.stringify(obj1));`
 
-  - alert( true == 1 ); // true
-  - alert( false == 0 ); // true
+### Constructor Function:
 
-  - alert( null === undefined ) // false (typeof null-> object and typeof undefined-> undefined)
-  - alert( null == undefined ); // true
+```javascript
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+const p1 = new Person("Gourav", 22);
+```
 
-  - alert( null > 0 );  // (1) false
-  - alert( null == 0 ); // (2) false
-  - alert( null >= 0 ); // (3) true
+### ES6 Class:
 
-  - alert( undefined > 0 ); // false (1)
-  - alert( undefined < 0 ); // false (2)
-  - alert( undefined == 0 ); // false (3)
+```javascript
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
 
-- Logical operators
-  - || (OR)
-    - alert( true || true );   // true
-    - alert( false || true );  // true
-    - alert( true || false );  // true
-    - alert( false || false ); // false
-  - && (AND)
-    - result = a && b;
-    - alert( true && true );   // true
-    - alert( false && true );  // false
-    - alert( true && false );  // false
-    - alert( false && false ); // false
-  - ! (NOT)
-    - Returns the inverse value.
-    - alert( !true ); // false
-    - alert( !0 ); // true
+// Access
+user.name
+user["name"]
 
-## Nullish coalescing operator '??'
+// Update
+user.age = 25;
 
-- The Nullish Coalescing Operator returns the right value only when the left value is null or undefined.
-  - If value1 is null or undefined → return value2
-  - Otherwise → return value1
-  - let name = null;
-  - let result = name ?? "Guest";
-  - console.log(result) // Guest
+// Delete
+delete user.city;
+```
 
-- let count = 0;
-  - let result = count || 10;
-  - console.log(result); // 10 beacuse when we used this it takes 0 as falsy value and return 10
-    - false
-    - 0
-    - ""
-    - null
-    - undefined
-    - NaN
+---
 
-- let count = 0;
-- let result = count ?? 10;
-- console.log(result);// 0 because it check null and undefined only in nullish operator 
+## Arrays
+
+### Creating Arrays:
+
+```javascript
+const fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits[0]);  // "Apple"
+```
+
+### Array Methods:
+
+```javascript
+arr.length              // Get length
+arr.push(4)            // Add at end
+arr.pop()              // Remove from end
+arr.unshift(1)         // Add at beginning
+arr.shift()            // Remove from beginning
+
+arr.slice(1, 3)        // Copy portion
+arr.splice(1, 2)       // Add/remove elements
+arr.join("-")          // Join with separator
+arr.includes(2)        // Check existence
+arr.indexOf(3)         // Find index
+```
+
+### Looping:
+
+```javascript
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+
+arr.forEach((num) => console.log(num));
+```
+
+### Higher Order Methods:
+
+```javascript
+arr.map(x => x * 2)              // Transform each element
+arr.filter(x => x > 2)           // Filter elements
+arr.reduce((sum, x) => sum + x)  // Reduce to single value
+arr.find(x => x > 2)             // First match
+arr.some(x => x > 2)             // At least one match
+arr.every(x => x > 2)            // All match
+```
+
+### Spread and Destructuring:
+
+```javascript
+const result = [...arr1, ...arr2];  // Combine arrays
+const [a, b] = arr;                 // Destructure
+```
+
+### String Methods with Arrays:
+
+```javascript
+const arr = ["JS", "React"];
+arr.join("-")           // "JS-React"
+
+const str = "JS,React,Node";
+str.split(",")          // ["JS", "React", "Node"]
+```
+
+---
+
+## Operators
+
+### Arithmetic:
+
+```javascript
++ (Addition)      // alert(2 + 2 + '1') => "41"
+- (Subtraction)
+* (Multiplication)
+/ (Division)
+% (Remainder)
+** (Exponentiation)  // 2 ** 2 = 4
+```
+
+### Unary Plus (Type Conversion):
+
+```javascript
+let apples = "2";
+let oranges = "3";
+alert(+apples + +oranges);  // 5
+```
+
+### Assignment:
+
+```javascript
+a = b = c = 2 + 2;  // Chained assignment
+n += 5;             // n = n + 5
+n *= 2;             // n = n * 2
+
+counter++;          // Post-increment (returns old value)
+++counter;          // Pre-increment (returns new value)
+```
+
+### Bitwise:
+
+```javascript
+& (AND)       | (OR)      ^ (XOR)     ~ (NOT)
+<< (LEFT SHIFT)   >> (RIGHT SHIFT)   >>> (ZERO-FILL RIGHT SHIFT)
+```
+
+### Comparison:
+
+```javascript
+alert('2' > 1);              // true
+alert(null === undefined);   // false
+alert(null == undefined);    // true
+alert(null >= 0);            // true
+```
+
+### Logical:
+
+```javascript
+|| (OR)   &&  (AND)   ! (NOT)
+```
+
+### Nullish Coalescing (`??`):
+
+Returns right value only if left is `null` or `undefined`:
+
+```javascript
+let name = null;
+let result = name ?? "Guest";  // "Guest"
+
+let count = 0;
+let result = count ?? 10;      // 0 (not falsy, just nullish check)
+```
+
+**Falsy Values in JavaScript:**
+- `false`
+- `0`
+- `""` (empty string)
+- `null`
+- `undefined`
+- `NaN`
+
