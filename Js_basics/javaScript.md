@@ -42,15 +42,15 @@
   - These store complex data and references in memory.
   - Object Array Function.
 
--typeof undefined // "undefined"
-  typeof 0 // "number"
-  typeof 10n // "bigint"-> n represent the bigint
-  typeof true // "boolean"
-  typeof "foo" // "string"
-  typeof Symbol("id") // "symbol"
-  typeof Math // "object"  (1)
-  typeof null // "object"  (2)
-  typeof alert // "function"  (3)
+- typeof undefined // "undefined"
+- typeof 0 // "number"
+- typeof 10n // "bigint"-> n represent the bigint
+- typeof true // "boolean"
+- typeof "foo" // "string"
+- typeof Symbol("id") // "symbol"
+- typeof Math // "object"  (1)
+- typeof null // "object"  (2)
+- typeof alert // "function"  (3)
   
 ## == vs === in JavaScript?
 
@@ -64,76 +64,77 @@
 
 - [String_Conversion]
   - let value = true;
-    alert(typeof value); // boolean
-    value = String(value); // now value is a string "true"
-    alert(typeof value); // string
+  - alert(typeof value); // boolean
+  - value = String(value); // now value is a string "true"
+  - alert(typeof value); // string
 - [Numeric_Conversion]
-      let str = "123";
-      alert(typeof str); // string
-      let num = Number(str); // becomes a number 123
-      alert(typeof num); // number
+      - let str = "123";
+      - alert(typeof str); // string
+      - let num = Number(str); // becomes a number 123
+      - alert(typeof num); // number
 
-      alert( Number("   123   ") ); // 123
-      alert( Number("123z") );      // NaN (error reading a number at "z")
-      alert( Number(true) );        // 1
-      alert( Number(false) );       // 0
+      - alert( Number("   123   ") ); // 123
+      - alert( Number("123z") );      // NaN (error reading a number at "z")
+      - alert( Number(true) );        // 1
+      - alert( Number(false) );       // 0
 
-      let age = Number("an arbitrary string instead of a number");
-      alert(age); // NaN, conversion failed
+      - let age = Number("an arbitrary string instead of a number");
+      - alert(age); // NaN, conversion failed
 
 - [Boolean_Conversion]
   - alert( Boolean(1) ); // true
-    alert( Boolean(0) ); // false
+  - alert( Boolean(0) ); // false
 
-    alert( Boolean("hello") ); // true
-    alert( Boolean("") ); // false
+  - alert( Boolean("hello") ); // true
+  - alert( Boolean("") ); // false
 
-    alert( Boolean("0") ); // true
-    alert( Boolean(" ") ); // spaces, also true (any non-empty string is true)
-
+  - alert( Boolean("0") ); // true
+  - alert( Boolean(" ") ); // spaces, also true (any non-empty string is true)
 
 ## control Flow in JS?
 
 - [if_elseIf_else]= let marks = 75;
-                if (marks >= 90) {
-                console.log("Grade A");
-                } else if (marks >= 60) {
-                console.log("Grade B");
-                } else {
-                console.log("Grade C");
-                }
+      - if (marks >= 90) {
+      console.log("Grade A");
+      - } else if (marks >= 60) {
+      console.log("Grade B");
+      - } else {
+      console.log("Grade C");
+      - }.
+  
 - [switch_case]= let day = 2 
-                switch(day) {
-                case 1:
-                    console.log("Monday");
-                    break;
-                case 2:
-                    console.log("Tuesday");
-                    break;
-                default:
-                    console.log("Invalid Day");
-                }
+      - switch(day) {
+      - case 1:
+          console.log("Monday");
+          break;
+      - case 2:
+          console.log("Tuesday");
+          break;
+      - default:
+          console.log("Invalid Day");
+        }.
+
 -[Loops(Iteration)]
-                    <!-- for -->
-                    for(let i = 1; i <= 5; i++){
-                    console.log(i);
-                    }.
-                    <!-- =while -->
-                    let i = 1;
-                    while(i <= 5){
-                    console.log(i);
-                    i++;
-                    }.
-                    <!-- do-While -->
-                    let i = 1;
-                    do{
-                    console.log(i);
-                    i++;
-                    }while(i <= 5);
-                    <!-- ternary operator -->
-                    let age = 20;
-                    let result = age >= 18 ? "Adult" : "Minor";
-                    console.log(result);
+      <!-- for -->
+      - for(let i = 1; i <= 5; i++){
+        console.log(i);
+      }.
+      <!-- =while -->
+      - let i = 1;
+      -while(i <= 5){
+        console.log(i);
+        i++;
+      }.
+      <!-- do-While -->
+      -let i = 1;
+      -do{
+        console.log(i);
+        i++;
+      -}while(i <= 5);
+      <!-- ternary operator -->
+      -let age = 20;
+      -let result = age >= 18 ? "Adult" : "Minor";
+      -console.log(result);
 
 - [break]: Stops the loop completely.
 - [continue]: Skips current iteration.
@@ -283,10 +284,10 @@ Temporal Dead Zone is the time between variable hoisting and its initialization 
         this.age = age;
         }
     }
-    user.name // access
-    user["name"] // access
-    user.age = 25; // update
-    delete user.city; // delete
+  - user.name // access
+  - user["name"] // access
+  - user.age = 25; // update
+  - delete user.city; // delete
 
 ## what is array in JS?
 
