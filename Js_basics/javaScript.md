@@ -67,6 +67,7 @@
   - alert(typeof value); // boolean
   - value = String(value); // now value is a string "true"
   - alert(typeof value); // string
+  
 - [Numeric_Conversion]
       - let str = "123";
       - alert(typeof str); // string
@@ -336,4 +337,62 @@ Temporal Dead Zone is the time between variable hoisting and its initialization 
     const str = "JS,React,Node";
     str.split(","); // ["JS","React","Node"]
 
-## What is String
+## Operators in JS?
+
+- Addition +,
+  - alert(2 + 2 + '1' ); // "41" and not "221"
+  - alert('1' + 2 + 2); // "122" and not "14"
+
+  - let apples = "2";
+    let oranges = "3";
+    // both values converted to numbers before the binary plus
+    alert( +apples + +oranges ); // 5
+
+- Subtraction -,
+- Multiplication *,
+- Division /,
+- Remainder %,
+
+- Exponentiation **.
+  - alert( 2 ** 2 ) // square  
+  - alert( 4 ** (1/2) ) // square root
+
+- Assignment operator
+  - let a, b, c;
+  - a = b = c = 2 + 2;
+  - alert( a ); // 4
+  - alert( b ); // 4
+  - alert( c ); // 4
+
+  - let n = 2;
+  - n += 5; // now n = 7 (same as n = n + 5)
+  - n *= 2; // now n = 14 (same as n = n * 2)
+  - alert( n ); // 14
+
+  - let counter = 0;
+  - alert( counter++ ); // 0  
+
+  - let counter = 0;
+  - alert( ++counter ); // 1
+
+  - let counter = 1;
+  - let a = counter++; // (*) changed ++counter to counter++
+  - alert(a); // 1
+
+  - let counter = 1;
+  - let a = ++counter; // (*)
+  - alert(a); // 2
+
+- Bitwise operators
+  - AND ( & )
+  - OR ( | )
+  - XOR ( ^ )
+  - NOT ( ~ )
+  - LEFT SHIFT ( << )
+  - RIGHT SHIFT ( >> )
+  - ZERO-FILL RIGHT SHIFT ( >>> )
+
+- Comma
+  - let a = (1 + 2, 3 + 4);
+  - alert( a ); // 7 (the result of 3 + 4) 
+
