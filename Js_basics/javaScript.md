@@ -443,14 +443,14 @@ Temporal Dead Zone is the time between variable hoisting and its initialization 
   - console.log(result) // Guest
 
 - let count = 0;
-  let result = count || 10;
-  console.log(result); // 10 beacuse when we used this it takes 0 as falsy value and return 10
-      - false
-      - 0
-      - ""
-      - null
-      - undefined
-      - NaN
+  - let result = count || 10;
+  - console.log(result); // 10 beacuse when we used this it takes 0 as falsy value and return 10
+    - false
+    - 0
+    - ""
+    - null
+    - undefined
+    - NaN
 
 - let count = 0;
 - let result = count ?? 10;
