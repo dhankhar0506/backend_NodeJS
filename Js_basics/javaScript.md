@@ -93,62 +93,78 @@
   - alert( Boolean(" ") ); // spaces, also true (any non-empty string is true)
 
 ## control Flow in JS?
+## Control Flow in JS?
 
-- [if_elseIf_else]
-  
-- let marks = 75;
-- if (marks >= 90) {
+### if / else if / else
+
+```javascript
+let marks = 75;
+if (marks >= 90) {
   console.log("Grade A");
-- } else if (marks >= 60) {
+} else if (marks >= 60) {
   console.log("Grade B");
-- } else {
+} else {
   console.log("Grade C");
-- }
+}
+```
 
-- [switch_case]
-  
-- let day = 2;
-- switch (day) {
-  - case 1:
+### switch / case
+
+```javascript
+let day = 2;
+switch (day) {
+  case 1:
     console.log("Monday");
     break;
-
-  - case 2:
+  case 2:
     console.log("Tuesday");
     break;
-
-  - default:
+  default:
     console.log("Invalid Day");
-  }
+}
+```
 
--[Loops(Iteration)]
-  <!-- for -->
-- for (let i = 1; i <= 5; i++) {
-- console.log(i);
-  }
+### Loops (Iteration)
 
-  <!-- =while -->
-- let i = 1;
-- while (i <= 5) {
+**for loop:**
+```javascript
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+```
+
+**while loop:**
+```javascript
+let i = 1;
+while (i <= 5) {
   console.log(i);
   i++;
 }
+```
 
-<!--do while -->
-- let i = 1;
-- do {
+**do while loop:**
+```javascript
+let i = 1;
+do {
   console.log(i);
   i++;
 } while (i <= 5);
+```
 
-- [ternary_operator]
-- condition ? value_if_true : value_if_false
-- let age = 20
-- let result = age >= 18 ? "Adult" : "Minor";
-- console.log(result);
+### Ternary Operator
 
-- [break]: Stops the loop completely.
-- [continue]: Skips current iteration.
+```javascript
+condition ? value_if_true : value_if_false
+
+let age = 20;
+let result = age >= 18 ? "Adult" : "Minor";
+console.log(result);
+```
+
+### break and continue
+
+- **break**: Stops the loop completely.
+- **continue**: Skips current iteration.
 
 ## Explain Varibale and What the difference between var vs let vs const
 
