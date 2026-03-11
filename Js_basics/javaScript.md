@@ -10,11 +10,24 @@
   - Compilation → Translate the entire book first, then read it.
   - Interpretation → Translate sentence by sentence while reading.
 - Dynamically Typed
+- JavaScript is a dynamically typed language, meaning we don't need to declare variable types explicitly. The type is determined automatically at runtime and a variable can hold different types of values during execution.
 - Asynchronous Programming(built in Feature) : JavaScript can handle non-blocking operations using
     Callbacks
     Promises
     Async / Await
     Event Loop.
+
+## how to take input from user in JS?
+
+- let age = prompt('How old are you?', 100);
+- alert(`You are ${age} years old!`); // You are 100 years old!
+
+- We covered 3 browser-specific functions to interact with visitors:
+  - Alert()
+  - prompt()
+  - confrim
+    - let isBoss = confirm("Are you the boss?");
+      alert( isBoss );
 
 ## Data Types in JS?
 
@@ -28,6 +41,16 @@
 - Non-Primitive Data Types
   - These store complex data and references in memory.
   - Object Array Function.
+
+-typeof undefined // "undefined"
+  typeof 0 // "number"
+  typeof 10n // "bigint"-> n represent the bigint
+  typeof true // "boolean"
+  typeof "foo" // "string"
+  typeof Symbol("id") // "symbol"
+  typeof Math // "object"  (1)
+  typeof null // "object"  (2)
+  typeof alert // "function"  (3)
   
 ## == vs === in JavaScript?
 
@@ -38,6 +61,36 @@
 
 - (+) If one value is a string, JavaScript converts the other value into a string.
 - (-,*,%) operators always converts values into numbers.
+
+- [String_Conversion]
+  - let value = true;
+    alert(typeof value); // boolean
+    value = String(value); // now value is a string "true"
+    alert(typeof value); // string
+- [Numeric_Conversion]
+      let str = "123";
+      alert(typeof str); // string
+      let num = Number(str); // becomes a number 123
+      alert(typeof num); // number
+
+      alert( Number("   123   ") ); // 123
+      alert( Number("123z") );      // NaN (error reading a number at "z")
+      alert( Number(true) );        // 1
+      alert( Number(false) );       // 0
+
+      let age = Number("an arbitrary string instead of a number");
+      alert(age); // NaN, conversion failed
+
+- [Boolean_Conversion]
+  - alert( Boolean(1) ); // true
+    alert( Boolean(0) ); // false
+
+    alert( Boolean("hello") ); // true
+    alert( Boolean("") ); // false
+
+    alert( Boolean("0") ); // true
+    alert( Boolean(" ") ); // spaces, also true (any non-empty string is true)
+
 
 ## control Flow in JS?
 
@@ -85,14 +138,20 @@
 - [break]: Stops the loop completely.
 - [continue]: Skips current iteration.
 
-## var vs let vs const
+## Explain Varibale and What the difference between var vs let vs const
 
-- Var
+- A variable is a “named storage” for data. We can use varibales to Store data.
+  There are two limitations on variable names in JavaScript:
+    The name must contain only letters, digits, or the symbols $ and _.
+    The first character must not be a digit.
+
+- [Var]
 - works inside a function, not block.
 - Re-declaration Allowed and  Re-assignment Allowed
 - Hoisted
 
-- let= Block Scoped
+- [let]
+- Block Scoped
 - Re-declaration NOT allowed
   - let a = 10
   - let a = 20.
@@ -100,7 +159,7 @@
   - let a = 10;
   - a = 20; // allowed.
 
-- Const =  Block Scoped, Re-declaration and  Re-assignment  NOT allowed.
+- [Const]=  Block Scoped, Re-declaration and  Re-assignment  NOT allowed.
 
 ## . What is Hoisting?
 
@@ -276,4 +335,4 @@ Temporal Dead Zone is the time between variable hoisting and its initialization 
     const str = "JS,React,Node";
     str.split(","); // ["JS","React","Node"]
 
-## 
+## What is String
