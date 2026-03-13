@@ -35,19 +35,15 @@
 - JavaScript can access/modify nodes, recalculate layout, and repaint the screen.
 
 ```text
-
 JS change → DOM update → Layout calculation → Paint → UI updated
-
 ```
 
 - Real DOM is slow; every change triggers browser work.
 
 ```javascript
-
 for(let i=0; i<1000; i++){
   document.getElementById("list").innerHTML += "<li>Item</li>";
 }
-
 ```
 
 - Browser updates DOM 1000 times.
@@ -57,20 +53,16 @@ for(let i=0; i<1000; i++){
 - Virtual DOM is a lightweight JavaScript copy of the real DOM.
 
 ```javascript
-
 {
   type: "h1",
   props: {
     children: "Hello"
   }
 }
-
 ```
 
 ```text
-
 State Change → New Virtual DOM → Compare with previous → Diff → Update changed elements in Real DOM
-
 ```
 
 - React re-renders components and creates a new Virtual DOM when state or props change.
@@ -87,13 +79,11 @@ State Change → New Virtual DOM → Compare with previous → Diff → Update c
 - Components are reusable UI pieces.
 
 ```text
-
 App
 ├── Header
 ├── Sidebar
 ├── ProductList
 └── Footer
-
 ```
 
 - Enables code reuse, easy maintenance, and better organization.
@@ -103,9 +93,7 @@ App
 - JSX lets you write HTML inside JavaScript.
 
 ```javascript
-
 const element = <h1>Hello Gourav</h1>
-
 ```
 
 - JSX is compiled to JavaScript.
@@ -119,9 +107,7 @@ const element = <h1>Hello Gourav</h1>
 - Props pass data from parent to child components.
 
 ```javascript
-
 <Greeting name="Gourav"/>
-
 ```
 
 ### Reconciliation
@@ -129,9 +115,7 @@ const element = <h1>Hello Gourav</h1>
 - React updates the DOM efficiently by comparing Virtual DOMs.
 
 ```text
-
 State changes → Component re-renders → New Virtual DOM → Compare → Diff → Update real DOM
-
 ```
 
 - Only changed elements are updated.
@@ -140,30 +124,24 @@ State changes → Component re-renders → New Virtual DOM → Compare → Diff 
 
 - Hooks let functional components use React features.
 
-**useState:**
+#### useState
 
 ```javascript
-
 const [count, setCount] = useState(0)
-
 ```
 
-**useEffect:**
+#### useEffect
 
 ```javascript
-
 useEffect(() => {
   fetchData()
 }, [])
-
 ```
 
-**useRef:**
+#### useRef
 
 ```javascript
-
 const inputRef = useRef()
-
 ```
 
 - Stores values without causing re-render.
@@ -186,7 +164,6 @@ const inputRef = useRef()
 ### Simple State Update
 
 ```javascript
-
 function Counter() {
   const [count, setCount] = useState(0);
   return (
@@ -196,13 +173,11 @@ function Counter() {
     </div>
   );
 }
-
 ```
 
 ### useReducer (Complex State Logic)
 
 ```javascript
-
 import { useReducer } from "react";
 function reducer(state, action) {
   switch (action.type) {
@@ -227,13 +202,11 @@ function Counter() {
     </div>
   );
 }
-
 ```
 
 ### Context API (Global State)
 
 ```javascript
-
 import { createContext, useContext, useState } from "react";
 
 const UserContext = createContext();
@@ -252,7 +225,6 @@ function Profile() {
   const user = useContext(UserContext);
   return <h1>Hello {user}</h1>;
 }
-
 ```
 
 ## Code Splitting
@@ -286,27 +258,29 @@ function Profile() {
 ## React.lazy()
 
 - `React.lazy()` is a React function used to lazy load components using dynamic import.
-- Example:
-  ```javascript
-  const ComponentName = React.lazy(() => import("./ComponentName"));
-  ```
+
+```javascript
+const ComponentName = React.lazy(() => import("./ComponentName"));
+```
+
 - Usage:
-  ```javascript
-  import React from "react";
-  const About = React.lazy(() => import("./About"));
-  ```
+
+```javascript
+import React from "react";
+const About = React.lazy(() => import("./About"));
+```
 
 ## Suspense
 
 - Since lazy components load asynchronously, React needs something to display while the component downloads.
-- Example:
-  ```javascript
-  <Suspense fallback={<Loader />}>
-    <LazyComponent />
-  </Suspense>
-  ```
 
+```javascript
+<Suspense fallback={<Loader />}>
+  <LazyComponent />
+</Suspense>
 ```
+
+```text
 User opens app
 ↓
 Home component loads
@@ -326,48 +300,59 @@ About component renders
 
 - Without a bundler, a React application would not run properly because browsers cannot understand JSX and modern module syntax. Bundlers compile JSX, combine multiple files into optimized bundles, reduce HTTP requests, and improve performance.
 - Without Bundler: You would need to load scripts manually. This becomes unmanageable for large applications.
-  ```html
-  <script src="Header.js"></script>
-  <script src="Sidebar.js"></script>
-  <script src="Footer.js"></script>
-  <script src="App.js"></script>
-  ```
+
+```html
+<script src="Header.js"></script>
+<script src="Sidebar.js"></script>
+<script src="Footer.js"></script>
+<script src="App.js"></script>
+```
+
 - React components are written using JSX.
-  ```javascript
-  function App() {
-    return <h1>Hello World</h1>;
-  }
-  ```
-  - But browsers only understand regular JavaScript, not JSX.
-  - Bundlers use tools like Babel to perform this conversion.
+
+```javascript
+function App() {
+  return <h1>Hello World</h1>;
+}
+```
+
+- But browsers only understand regular JavaScript, not JSX.
+- Bundlers use tools like Babel to perform this conversion.
+
 - Optimization or Minification:
   - Before optimization:
+
     ```javascript
     function add(a, b) {
       return a + b;
     }
     ```
+
   - After bundling:
+
     ```javascript
     function add(a,b){return a+b}
     ```
+
 - Without bundlers → larger files and slower loading.
 
 - Without a Bundler:
   - If we do not use a bundler in a React application, every JavaScript file must be loaded separately by the browser.
-  ```html
-  <script src="Header.js"></script>
-  <script src="Sidebar.js"></script>
-  <script src="Footer.js"></script>
-  <script src="Login.js"></script>
-  <script src="Registration.js"></script>
-  <script src="App.js"></script>
-  ```
 
-**Simple Flow**
-
-**Without bundler:**
+```html
+<script src="Header.js"></script>
+<script src="Sidebar.js"></script>
+<script src="Footer.js"></script>
+<script src="Login.js"></script>
+<script src="Registration.js"></script>
+<script src="App.js"></script>
 ```
+
+### Simple Flow
+
+#### Without bundler
+
+```text
 Browser
   ↓
 Multiple HTTP Requests
@@ -379,11 +364,151 @@ Login.js
 Registration.js
 ```
 
-**With bundler:**
-```
+#### With bundler
+
+```text
 Browser
   ↓
 Single optimized bundle
   ↓
 bundle.js
 ```
+
+## What is batching
+
+- React groups multiple updates together and processes them in a single re-render to improve performance.
+
+- Without batching:
+  - setState → render
+  - setState → render
+  - setState → render
+
+- With batching:
+  - setState
+  - setState
+  - setState
+    ↓
+  - 1 render
+
+## Difference between `setCount(count+1)` and `setCount(prev=>prev+1)`
+
+- If the new state depends on the previous state, use the functional update:
+
+```javascript
+setCount(prev => prev + 1)
+```
+
+- Example:
+
+```javascript
+function handleClick() {
+  setCount(prev => prev + 1)
+  setCount(prev => prev + 1)
+  setCount(prev => prev + 1)
+  // prev = 0 → 1
+  // prev = 1 → 2
+  // prev = 2 → 3
+  // count = 3
+}
+```
+
+- If the new state does not depend on the previous state, you can directly update:
+
+```javascript
+setCounter(counter + 1)
+```
+
+## React Render Cycle
+
+1. **Trigger**  
+   A state update happens  
+   Example:  
+   `setCounter(prev => prev + 1)`
+
+2. **Render Phase**  
+   React calls the component function again  
+   Creates a new Virtual DOM
+
+3. **Reconciliation**  
+   React compares old Virtual DOM vs new Virtual DOM
+
+4. **Commit Phase**  
+   React updates the real DOM only where changes happened
+
+## Reconciliation
+
+- Reconciliation is the process where React compares the old Virtual DOM with the new Virtual DOM to determine what changed.
+- This process is also called Diffing Algorithm.
+
+**Example**
+
+- Old Virtual DOM
+
+```html
+<h1>Hello</h1>
+```
+
+- New Virtual DOM
+
+```html
+<h1>Hello Gourav</h1>
+```
+
+- React compares:
+
+```html
+<h1>Hello</h1>
+<h1>Hello Gourav</h1>
+```
+
+- Result:  
+  Only text changed → React updates only text node, not the whole element.
+
+## Lifecycle Methods
+
+1. **Mounting Phase (Component Created)**
+   - When the component is created and inserted into the DOM for the first time.
+2. **Updating Phase (Component Re-renders)**
+   - Updating happens when state or props change.
+3. **Unmounting Phase (Component Removed)**
+   - When a component is removed from the DOM.
+
+```text
+Component Created
+       │
+       ▼
+Component Did Mount
+(Runs after component appears in DOM)
+       │
+       ▼
+User Interaction
+(state / props change)
+       │
+       ▼
+Component Did Update
+(Runs after every re-render)
+       │
+       ▼
+Component Removed From DOM
+       │
+       ▼
+Component Will Unmount
+(Cleanup happens here)
+```
+
+- When Does Unmount Actually Happen?
+
+```javascript
+function App() {
+  const [show, setShow] = useState(true)
+
+  return (
+    <>
+      <button onClick={() => setShow(!show)}>Toggle</button>
+      {show && <Child />}
+    </>
+  )
+}
+```
+
+- If `show` becomes false, `<Child />` is removed from the DOM.
