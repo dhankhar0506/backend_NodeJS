@@ -1,20 +1,19 @@
-import { useState } from "react"
-
+import { useRef } from "react";
 
 function App() {
-  const [counter, setCounter] = useState(0)
+  const count = useRef(0);
 
-  function handleCounter() {
-    setCounter(counter + 1)
-    setCounter(counter + 1)
+  function handleClick() {
+    count.current++;
+    console.log(count.current);
   }
 
   return (
     <>
-      <h1>{counter}</h1>
-      <button onClick={handleCounter}>+</button>
+      <h1>{count.current}</h1>
+      <button onClick={handleClick}>Click</button>
     </>
-  )
+  );
 }
 
 export default App
