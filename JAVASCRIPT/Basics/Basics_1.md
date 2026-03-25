@@ -253,147 +253,104 @@
 
 ## Loops in JS?
 
-Loops are used to repeat code multiple times.
-
-### Types of Loop
-
-- **for loop** – Use when you know how many times to run
-    ```javascript
-    for (let i = 0; i < 5; i++) {
-        console.log(i);
+- Loops are used to repeat code multiple times.
+- Types of Loop:
+  - for loop : Use when you know how many times to run 
+    - for (let i = 0; i < 5; i++) {
+        console.log(i)
     }
-    ```
-
-- **While Loop** – Runs while condition is true
-    ```javascript
-    let i = 0;
+- While Loop : Runs while condition is true
+  - let i = 0;
     while (i < 5) {
-        console.log(i);
-        i++;
+    console.log(i);
+    i++;
     }
-    ```
-
-- **do...While** – Runs at least once (even if condition is false)
-    ```javascript
-    let i = 0;
+- do While : Runs at least once (even if condition false)
+  - let i = 0;
     do {
-        console.log(i);
-        i++;
+    console.log(i);
+    i++;
     } while (i < 5);
-    ```
-
-- **for...of loop** – Iterate over array values
-    ```javascript
-    let arr = [10, 20, 30];
+- for...of loop
+  - let arr = [10, 20, 30];
     for (let value of arr) {
-        console.log(value);
+    console.log(value);
     }
-    ```
-
-- **for...in loop** – Iterate over object keys 🔑
-    ```javascript
-    let user = { name: "Gourav", age: 25 };
+- for...in loop (Objects 🔑)
+  - let user = { name: "Gourav", age: 25 };
     for (let key in user) {
-        console.log(key, user[key]);
+    console.log(key, user[key]);
     }
-    ```
-
-### Loop Control Statements
-
-- **break** – Stop loop
-    ```javascript
-    for (let i = 0; i < 5; i++) {
+- Loop Control Statements
+  - break (Stop loop)
+    - for (let i = 0; i < 5; i++) {
         if (i === 3) break;
         console.log(i);
-    }
-    ```
+        }
+- continue (Skip iteration)
+  - for (let i = 0; i < 5; i++) {
+  if (i === 2) continue;
+  console.log(i);
+}
 
-- **continue** – Skip current iteration
-    ```javascript
-    for (let i = 0; i < 5; i++) {
-        if (i === 2) continue;
-        console.log(i);
-    }
-    ```
+## Switch statement 
 
-## Switch Statement
-
-A switch statement runs different code based on different values.
-
-```javascript
-switch (expression) {
+- A switch statement is used to run different code based on different values.
+  - switch (expression) {
     case value1:
         // code
         break;
+
     case value2:
         // code
         break;
+
     default:
         // default code
-}
-```
+    } 
 
 ## Functions in JS
 
-A function is a block of reusable code.
-
-**Function = Reusable code**
-
-```javascript
-function add(a, b) {
+- A function is a block of code that you can reuse whenever needed.
+- Function = Reusable code
+  - function add(a, b) {
     return a + b;
-}
+  }
 
-let result = add(2, 3);
-console.log(result); // 5
-```
-
-### Types of Functions
-
-- **Function Declaration** – Hoisted ✔ (can call before declaration)
-    ```javascript
-    function sayHi() {
-        console.log("Hi");
+    let result = add(2, 3);
+    console.log(result); // 5
+- Types of Functions
+  - Function Declaration
+  - Hoisted ✔ (can call before declaratio)
+  - function sayHi() {
+    console.log("Hi");
     }
-    ```
-
-- **Function Expression** – Not hoisted ❌
-    ```javascript
-    const sayHello = function () {
-        console.log("Hello");
-    };
-    ```
-
-- **Arrow Function** – Short syntax ✔
-    ```javascript
-    const add = (a, b) => a + b;
-    ```
-    > Note: No `this` of its own ❗, Not hoisted ❌
-
-- **Anonymous Function** – Function without a name
-    ```javascript
-    setTimeout(function () {
-        console.log("Run after 2 sec");
-    }, 2000);
-    ```
-
-- **Callback Function** – A function passed as an argument, executed later
-    ```javascript
-    function greet(name, callback) {
+  - Function Expression
+  - Not hoisted ❌
+    - const sayHello = function () {
+    console.log("Hello");
+    } 
+  - Arrow Function
+    - Short syntax ✔
+    - No this of its own ❗
+    - Not hoisted ❌
+    - const add = (a, b) => a + b;
+  - Anonymous Function : function without name
+    - setTimeout(function () {
+    console.log("Run after 2 sec");
+  }, 2000);
+  - Callback Function : A callback function is a function that is passed as an argument to another function and is executed later.
+    - function greet(name, callback) {
         console.log("Hello " + name);
         callback(); // calling callback
-    }
+        }
 
-    function sayBye() {
+        function sayBye() {
         console.log("Bye!");
-    }
+        }
 
-    greet("Gourav", sayBye);
-    ```
-
-- **Arrow Function Callback**
-    ```javascript
-    greet("Gourav", () => {
-        console.log("Finished!");
+        greet("Gourav", sayBye);
+    - Arrow Function Callback
+    - greet("Gourav", () => {
+    console.log("Finished!");
     });
-    ```
