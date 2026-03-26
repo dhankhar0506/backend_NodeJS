@@ -140,3 +140,131 @@ User → External View → Conceptual Schema → Internal Storage → Database
 - An application uses an API to communicate with a backend server, which accesses the database using drivers, runs queries, and sends the result back to the application
 - [ORM] (Object-Relational Mapping) and [ODM] (Object-Document Mapping) are techniques that bridge the gap between object-oriented code and databases, allowing developers to interact with data using code objects instead of raw SQL or NoSQL queries.
 
+## What is DBA
+
+- **DBA** (Database Administrator) is a person who manages, maintains, and controls a database system.
+- **Responsibilities of DBA**
+  - 🔒 Security Management
+  - 💾 Backup & Recovery
+  - ✅ Data Integrity
+  - 📊 Monitoring & Maintenance
+
+## Explain Database Application Architecture
+
+- **DBMS Application Architecture** (Simple + Detailed)
+- DBMS Application Architecture defines how an application, database, and users interact with each other.
+
+### 1-Tier Architecture (Single Tier)
+- Client, server, and DB are on the same machine
+
+### 2-Tier Architecture (Client-Server)
+- **What it is:** Two separate machines are involved. The "Client" (your PC) has the UI, and it talks directly to the "Server" (the database machine).
+- **Best for:** Small organizations with a limited number of users.
+
+### 3-Tier Architecture (Web-Based)
+- There is an Application Server sitting in the middle. Your computer talks to the Middleman, and the Middleman talks to the database.
+- `[Client]` ↔ `[Application Server]` ↔ `[Database]`
+
+## What is ER Model?
+
+**ER Model** is a high-level data model used to design a database.
+
+### Entities (Objects)
+- A real-world object (person, place, thing)
+- Examples: Student, Course
+  - Single Student = Entity
+  - Group of Students = Entity set
+
+### Attributes (Properties)
+Properties of an entity (Id, rollno, course)
+
+#### Types of Attributes
+- **Simple Attribute** → Cannot be divided further (e.g., customer account number)
+- **Composite Attribute** → Can be divided into subparts (e.g., name → first + middle + last; address → street + city + state + zip)
+- **Multivalued Attribute** → Multiple values (e.g., phone numbers) `// double ellipse`
+- **Derived Attribute** → Calculated (e.g., age from DOB) `// dotted ellipse`
+- **Key Attribute** → Unique identifier (e.g., student_id)
+
+### Relationships (Connections)
+Connection between entities
+
+#### Strong Relationship
+- Has its own primary key
+- Can exist independently
+- ✔️ Example: Employee, Student
+- `Student ── Enrolls ── Course`
+
+#### Weak Relationship
+- Does NOT have full primary key
+- Depends on strong entity
+- Example: Loan has Payment (Payment only exists when we have a loan)
+- `[Strong Entity] ──── [Weak Relationship] ──── [Weak Entity]`
+
+### Degree of Relationship
+Degree = Number of entities involved in a relationship
+
+- **Unary Relationship** (Degree = 1): `Employee ── Manages ── Employee`
+- **Binary Relationship** (Degree = 2): `Student ── Enrolls ── Course`
+- **Ternary Relationship** (Degree = 3): `Supplier ── Supplies ── Product ── Project`
+
+### Relationship Constraints / Mapping Constraint
+Number of entities associated with another entity
+
+| Type | Example |
+|------|---------|
+| **1:1** (One-to-One) | One student → one ID card |
+| **1:M** (One-to-Many) | One teacher → many students |
+| **M:N** (Many-to-Many) | Many students → many courses |
+
+### Participation Constraint / Minimum Cardinality Constraint
+
+#### Total Participation
+- Each entity must have at least one relationship
+- Example: `[Customer] ══ Borrow ══ [Loan]`
+- Every loan must be linked to a customer
+- Shown with **double line** (══)
+
+#### Partial Participation
+- Not all entities are involved in the relationship
+- Example: Some customers may not have loans
+- Shown with **single line** (──)
+
+## What are Constraints?
+
+**Constraints** = Rules that control what data can be stored
+
+Constraints are rules applied on a database to ensure that the data is accurate, valid, and consistent.
+
+### Why Constraints are Used?
+- ✅ Maintain data integrity (data is correct and trustworthy)
+- ✅ Prevent wrong or invalid data
+- ✅ Ensure consistency
+- ✅ Improve data reliability
+
+**Examples:**
+- Primary Key ensures no duplicate or NULL IDs
+- Foreign Key ensures valid relationships
+- Age cannot be negative ❌
+- Email cannot be empty ❌
+
+### Types of Constraints
+- NOT NULL Constraint
+- UNIQUE Constraint
+- PRIMARY KEY Constraint
+- FOREIGN KEY Constraint
+- CHECK Constraint
+
+## ER Model Symbols
+
+| Symbol | Meaning |
+|--------|---------|
+| Rectangle | Entity |
+| Double Rectangle | Weak Entity |
+| Oval | Attribute |
+| Underlined Oval | Primary Key |
+| Double Oval | Multivalued Attribute |
+| Dashed Oval | Derived Attribute |
+| Diamond | Relationship |
+| Double Diamond | Weak (Identifying) Relationship |
+| Single Line | Partial Participation |
+| Double Line | Total Participation |
