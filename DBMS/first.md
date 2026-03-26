@@ -69,4 +69,27 @@
 ## What is DBMS architecture?
 
 -  The main purpose of DBMS is to Provide users with an abstract view and hide the Compexities 
--  
+-  It is the way data is stored, managed, and accessed in a database system.
+- [External_Level] (View Level)
+- What users see = Different users see different views of data
+- Hides unnecessary details
+- Example = Student sees → marks
+          Admin sees → full details
+- [Conceptual_Level] (Logical Level)
+- What data are Stored in DB and What relationships among them 
+- Eample = Table: Students (id, name, marks)
+- [Internal_Level] (Physical Level)
+- How data is actually stored
+- Storage format
+- Indexing
+
+User → External View → Conceptual Schema → Internal Storage → Database  
+ 
+## What is Schema?
+- Schema = Structure / Design of the Database
+- It defines how data is organized
+Includes:
+  Tables
+  Columns
+  Data types
+  Relationships
