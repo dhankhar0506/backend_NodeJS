@@ -1,97 +1,89 @@
 # Graph
 
-## What is a Graph?
+## what is graph?
 
-A Graph is a non-linear data structure consisting of:
-- **Vertices (Nodes)**: Points or entities
-- **Edges (Connections)**: Links between vertices
-
-Graphs represent relationships between objects.
-
-**Example**: Social network where users are vertices and friendships are edges.
-
----
+- A Graph is a non-linear data structure made up of:
+- Vertices (Nodes)
+- Edges (Connections)
+- It represents relationships between objects
 
 ## Why Do We Need Graphs?
 
-Graphs excel when data relationships matter:
-- Social networks (connections between people)
-- Maps & navigation (routes between locations)
-- Web pages (hyperlinks)
-- Recommendation systems
+- Graphs are perfect when data is connected, not just stored.
+- Relationships matter
+- If your problem involves connections, paths, or relationships → use Graph
+- Social networks
+- Maps & navigation
 
----
+## IMPORTANT GRAPH TERMINOLOGIES
 
-## Important Graph Terminologies
-
-| Term | Definition | Example |
-|------|-----------|---------|
-| **Vertex** | A node in the graph | User in social network |
-| **Edge** | Connection between two vertices | Friendship link |
-| **Degree** | Number of edges connected to a vertex | User with 5 friends = degree 5 |
-| **Path** | Sequence of vertices connected by edges | A → B → C |
-| **Cycle** | Path starting and ending at same node | A → B → C → A |
-| **Connected Graph** | All vertices reachable from each other | No isolated nodes |
-| **Directed Graph** | Edges have direction | A → B (one-way) |
-| **Undirected Graph** | No direction on edges | A — B (two-way) |
-| **Weighted Graph** | Edges have weights (cost/distance) | Roads with distances |
-
----
-
-## Graph Traversal
-
-### Breadth-First Search (BFS)
-Explores level by level, visiting nearest nodes first.
-
-**Use case**: Shortest path in unweighted graphs
-
-**Example**:
-```
-    A
-   / \
-  B   C
-  |
-  D
-```
-**Traversal**: A → B → C → D
-
-**Data Structure**: Queue
-
-### Depth-First Search (DFS)
-Explores one path fully before backtracking.
-
-**Use case**: Topological sorting, cycle detection
-
-**Example**: (Same graph) A → B → D → (backtrack) → C
-
-**Data Structure**: Stack / Recursion
-
----
+- Vertex (Node) :A point/entity in a graph
+- Edge : A connection between two vertices
+- Degree of Vertex : Number of edges connected to a vertex
+  - In-degree → incoming edges
+  - Out-degree → outgoing edges
+- Adjacent Vertices : Two vertices connected by an edge
+- Path : A sequence of vertices connected by edges // A → B → C
+- Path Length : Number of edges in path
+- Cycle : A path that starts and ends at same node // A → B → C → A
+- Connected Graph: Every vertex is reachable from every other vertex 
+- Disconnected Node : Some nodes are isolated 
+- Directed Graph (Digraph) : Edges have direction //A → B (one-way)
+- Undirected Graph : No direction in edges // A — B (two-way)
+- Weighted Graph :  Edges have weights (cost/distance/time)
+- Unweighted Graph : No weights on edges
+- Complete Graph : Every vertex connected to every other
+- Tree (Special Graph) A graph with: No cycles  and Connected
+- Traversal: Visiting all nodes
+  - BFS (Breadth First Search)
+    - Explore level by level
+    - Shortest path (unweighted)
+    - Level order traversal
+    - Start from a node
+    - Visit all its neighbors
+    - Explore nearest nodes first
+    - Then neighbors of neighbors
+    - A — B — D
+      |   
+      C
+    - A → B → C → D
+    - Queue
+  - DFS (Depth First Search)
+    - Go deep first, then backtrack
+    - Explore one path fully before others
+    - Stack / Recursion
+    - A — B — D
+      |   
+      C
+    A → B → D → C
+- Shortest Path :  Minimum distance between nodes
+  - Dijkstra
+  - Bellman-Ford
+- Store Graph 
+  - Adjacency : Adjacency List Stores neighbors 
+ - Adjacency Matrix 2D representation
 
 ## Important Graph Algorithms
 
-### Dijkstra's Algorithm
-Finds shortest path in weighted graphs (non-negative weights).
-
-**Example**:
-```
-A --1--> B --2--> C
-|_____4________|
-```
-Shortest path A to C: A → B → C (cost: 3)
-
-### Bellman-Ford Algorithm
-Finds shortest path, handles negative weights.
-
-### Prim's Algorithm
-Builds Minimum Spanning Tree (MST) by adding minimum edges.
-
-### Kruskal's Algorithm
-Builds MST by sorting edges and adding minimum-cost edges without cycles.
-
----
-
-## Graph Representation
-
-- **Adjacency List**: Stores neighbors of each vertex (space-efficient)
-- **Adjacency Matrix**: 2D array representation (fast lookup)
+- Dijkstra’s Algorithm
+  - Find shortest path in weighted graph
+  - A --1--> B --2--> C
+    A --4--> C
+- Bellman-Ford Algorithm
+  - Shortest path (handles negative weights)
+  - Handles negative weights
+- Prim’s Algorithm
+  - Minimum Spanning Tree (MST)
+  - Build tree by adding minimum edge
+  - Start from any node
+  - Pick smallest edge connecting new node
+  - Repeat
+  - Grow tree gradually with minimum cost
+- Kruskal’s Algorithm 
+  - Minimum Spanning Tree
+[Shortest_Path]
+- Minimum distance between nodes
+[Minimum_Spanning_Tree(MST)]
+- Connect all nodes with minimum cost
+- Minimum edges
+- Minimum cost
