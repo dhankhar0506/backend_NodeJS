@@ -268,3 +268,80 @@ Constraints are rules applied on a database to ensure that the data is accurate,
 | Double Diamond | Weak (Identifying) Relationship |
 | Single Line | Partial Participation |
 | Double Line | Total Participation |
+## Extended ER Features 
+
+- ER Model = Basic structure (simple cases)
+- EER Model = Advanced structure (complex cases)
+- When complexity increases, it is better to use Extended Features
+- **Example:** Suppose we have Person
+  - Some persons are Students
+  - Some are Employees
+  - Some are both
+  - Without EER: Create separate tables, causing data duplication ❌
+  - With EER: Person table with Student and Employee as specializations
+    - Common data stored once in Person ✔
+    - Student & Employee inherit it ✔
+    - No duplication ✔
+    - Clear structure ✔
+
+### Types of EER Features
+- **Generalization:** Combine similar entities into one
+  - Example: Car + Bike → Vehicle
+  - Bottom-up approach
+- **Specialization:** Divide one entity into parts
+  - Example: Person → Student, Employee
+  - Top-down approach
+- **Inheritance:** Child inherits properties from parent
+- **Aggregation:** Treat a relationship as an entity to interact with a third entity
+  - Used when a simple relationship isn't enough
+
+## What is Relational Model?
+
+- **Relational Model** = Data stored in tables (relations) with structured rows and columns
+- **Relation (Table):** Student table
+- **Attribute (Column):** id, name, age
+- **Tuple (Row):** Single record (1, Rahul, 20)
+- **Degree:** Number of columns (id, name, age → degree = 3)
+- **Cardinality:** Number of rows in a table
+
+### Keys in Relational Model
+- **Primary Key:** Uniquely identifies each row (Student_ID)
+- **Foreign Key:** Connects two tables (Student_ID in Marks table)
+- **Compound Key:** Combination of two or more attributes
+- **Super Key:** Any permutation of attributes to identify a tuple
+- **Candidate Key:** Minimal subset of Super Key with no redundant attributes (cannot be NULL)
+
+## Relationship between ER Model and Relational Model
+
+- **ER Model** = Design (Blueprint)
+- **Relational Model** = Implementation (Tables)
+- Workflow: Design with ER model → Convert to relational model tables
+
+## What is RDBMS?
+
+- **RDBMS (Relational Database Management System):** DBMS storing data in related tables connected by keys
+- Example: MySQL, PostgreSQL, Oracle
+
+## RDBMS vs DBMS vs File System
+
+| Aspect | File System | DBMS | RDBMS |
+|--------|-------------|------|-------|
+| Storage | Separate files | Any structure | Related tables |
+| Relationships | None | Basic | Keys-based |
+| Data Integrity | Poor | Moderate | Strong |
+| Security | Low | Moderate | High |
+
+## What is Integrity Constraint?
+
+- **Domain Constraint:** Defines valid values (Age ≥ 0, Marks 0–100)
+- **Entity Constraint:** Every relation must have a Primary Key (PK ≠ NULL)
+- **Referential Constraint:**
+  - **Insert:** Cannot insert child record if parent doesn't exist
+  - **Delete:** Cannot delete parent if related child records exist
+    - Solutions: ON DELETE CASCADE, ON DELETE SET NULL
+- **Key Constraint:** NOT NULL, UNIQUE, DEFAULT, CHECK, PK, FK
+
+## Can Foreign Key Have NULL Values?
+
+**YES.** Foreign Keys can have NULL values, indicating an optional relationship—the row is not currently linked to any parent row.
+
