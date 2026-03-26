@@ -57,3 +57,34 @@ Without DP: fib(5) recalculates fib(3) and fib(2) multiple times.
 - ✅ Avoids repeated calculations
 - ✅ Significantly improves performance
 - ❌ Without DP: Exponential time complexity
+
+---
+
+## Time Complexity
+
+How much time an algorithm takes as input size increases. It does NOT mean actual seconds—it means number of operations. More input → more work → more time.
+
+**Common Time Complexities:**
+
+| Complexity | Meaning |
+|-----------|---------|
+| O(1) | Constant (fastest) |
+| O(log n) | Logarithmic |
+| O(n) | Linear |
+| O(n log n) | Efficient sorting |
+| O(n²) | Nested loops |
+
+---
+
+## Space Complexity
+
+How much memory (space) an algorithm uses.
+
+| Complexity | Speed | Use Case |
+|-----------|-------|----------|
+| O(1) | 🔥 Fastest | Hashing |
+| O(log n) | ⚡ Fast | Binary Search |
+| O(n) | 👍 OK | Traversal |
+| O(n log n) | 👍 Good | Sorting |
+| O(n²) | ❌ Slow | Nested loops |
+| O(2ⁿ) | 💀 Worst | Backtracking |
