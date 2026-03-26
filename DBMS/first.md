@@ -254,6 +254,24 @@ Constraints are rules applied on a database to ensure that the data is accurate,
 - FOREIGN KEY Constraint
 - CHECK Constraint
 
+## What is Integrity Constraints
+
+## Integrity Constraints
+
+**Integrity constraints** are needed to keep data correct, valid, and consistent. They prevent wrong data from entering the database.
+
+### 4 Main Types of Integrity Constraints
+
+| Constraint Type | Simple Explanation | Real-World Example |
+|---|---|---|
+| **Domain Constraint** | Defines what kind of data goes in a column (Type, Range, Format) | A "Gender" column only allows 'M', 'F', or 'O'. You can't enter 'Banana' |
+| **Entity Integrity** | Every table must have a Primary Key, and it cannot be NULL | Every student must have a unique Roll Number. You can't have a student with "No ID" |
+| **Referential Integrity** | Keeps relationships between tables synced using Foreign Keys | You can't delete a "Department" if there are still "Employees" working in it |
+| **Key Constraint** | Ensures that specific values are unique across the whole table | Two people cannot have the same Aadhaar Number or Email Address in the system |
+
+
+
+
 ## ER Model Symbols
 
 | Symbol | Meaning |
