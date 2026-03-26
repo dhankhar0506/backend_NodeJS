@@ -1,54 +1,52 @@
 # Start
 
-## What is Data?
+## what is Data?
 
-- A collection of raw facts and figures stored in a database
-- Unprocessed information stored in tables
+- A collection Raw facts and figures stored in a database
+- unprocessed information stored in tables
 
-## Types of Data
+## Types of Data?
 
-- **Quantitative**: Numerical data (numbers)
-    - Discrete Data (Countable) — Number of students = 50
-    - Continuous Data (Measurable) — Weight = 65.8 kg
-- **Qualitative**: Non-numerical data (descriptive)
-    - Describes quality or category — Name = Gourav, Color = Red, Gender = Male
-        - Nominal Data: No order — Red, blue, green
-        - Ordinal Data: Ordered data — 1st, 2nd, 3rd
+- [Quantitative]: Numerical data (numbers)
+  - Discrete Data (Countable) // Number of students = 50
+  - Continuous Data (Measurable) // Weight = 65.8 kg
+- [Qualitative] : Non-numerical data (descriptive)
+  - Describes quality or category //  Name = Gourav , Color = Red , Gender = Male
+    - Nominal Data : No order // Red , blue , green
+    - Ordinal Data : order Data // 1st, 2nd, 3rd
+  
+## what is information?
 
-## What is Information?
-
-- Processed, organized, and structured data called information (Information = organized + processed data)
-    - Example:
-        - Data: `25, Gourav, 101`
-        - Information: `Student ID: 101, Name: Gourav, Age: 25`
-
-## Why We Need Information
-
+- Processed Organized and structured Data called information // Information = organized + processed data
+  - 25, Gourav, 101 // Data
+  - Student ID: 101  // Information
+    Name: Gourav  
+    Age: 2
+-[Why_We_need_Information]
 - Decision Making
-- Problem Solving (Helps find solutions)
+- Problem Solving(Helps find solutions)
 - Planning & Strategy
-- Understanding data and taking actions
+- We need information to make decisions, understand data, and take actions
 
 ## What is Database?
 
 - An organized collection of data stored in a structured way so it can be easily accessed, managed, and updated
-    - Store large amounts of data
-    - Easy to search and retrieve
-    - Update data easily
-    - Maintain accuracy
+  - Store large amount of data
+    Easy to search and retrieve
+    Update data easily
+    Maintain accuracy
 
 ## What is DBMS?
 
-- **DBMS** (Database Management System): A tool to handle databases
-- **Popular DBMS**: MySQL, Oracle, PostgreSQL, MongoDB
+- DBMS : Database Management System it is a tool to handle databases
+-[Popular_DBMS]: MySQL,Oracle,PostgreSQL,MongoDB
 
-## What is File System?
+## What is File System
 
-- Stores data in files and folders
-- Common formats: `.txt`, `.json`, `.csv`
-- Stored on your computer
+- What is File System. Stores data in files and folders
+- .txt, .json, .csv files and Stored on your computer.
 
-## File System vs DBMS
+## Difference between file system vs DBMS?
 
 | Feature | File System | DBMS |
 |---------|-------------|------|
@@ -61,11 +59,14 @@
 | Query Language | No | SQL ✔ |
 | Multi-user Access | Limited ❌ | Supported ✅ |
 
-**DBMS Architecture:**
-```
-User / Application
+- DBMS = middle layer that connects user and database and manages all operations
+- User / Application
         ↓
-    DBMS (middle layer)
+      DBMS
         ↓
-    Database
-```
+     Database
+
+## What is DBMS architecture?
+
+-  The main purpose of DBMS is to Provide users with an abstract view and hide the Compexities 
+-  
